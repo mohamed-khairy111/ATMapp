@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace ATMapp
             InitializeComponent();
         }
 
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ATMapp\ATMapp\DATABASEatm\ATMDb.mdf;Integrated Security=True;Connect Timeout=30;");
+        string Acc = login.AccNumber;
         private void ChangePin_Load(object sender, EventArgs e)
         {
             text = lbltext.Text;
@@ -36,6 +39,55 @@ namespace ATMapp
             }
             else
                 timer1.Stop();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Pin1Tb.Text == "" || Pin2Tb.Text == "")
+            {
+                MessageBox.Show("Enter And Confirm The New Pin");
+            }
+            else if (Pin2Tb.Text != Pin1Tb.Text)
+            {
+                MessageBox.Show("Not matched");
+            }
+            else
+            {
+
+                try
+                {
+                    Con.Open();
+                    string query = "update AccountTbl set PIN = " + Pin1Tb.Text + " where Accnum = '" + Acc + "' ";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("PIN Successfully Updated");
+                    Con.Close();
+                    login log = new login();
+                    log.Show();
+                    this.Hide();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HOME home = new HOME();
+            home.Show();
+            this.Hide();
         }
     }
 }

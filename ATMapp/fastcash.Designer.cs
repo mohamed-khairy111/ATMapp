@@ -39,7 +39,7 @@
             button4 = new Button();
             button5 = new Button();
             button7 = new Button();
-            label2 = new Label();
+            balancelbl = new Label();
             pictureBox1 = new PictureBox();
             button8 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -73,6 +73,7 @@
             button6.Size = new Size(30, 29);
             button6.TabIndex = 16;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbltext
             // 
@@ -94,12 +95,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft JhengHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(312, 153);
+            button2.Location = new Point(312, 183);
             button2.Name = "button2";
-            button2.Size = new Size(229, 74);
+            button2.Size = new Size(198, 77);
             button2.TabIndex = 16;
             button2.Text = "$100";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -110,10 +112,11 @@
             button1.ForeColor = Color.White;
             button1.Location = new Point(312, 266);
             button1.Name = "button1";
-            button1.Size = new Size(229, 74);
+            button1.Size = new Size(198, 74);
             button1.TabIndex = 17;
             button1.Text = "$1000";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -122,12 +125,13 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft JhengHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(312, 370);
+            button3.Location = new Point(312, 346);
             button3.Name = "button3";
-            button3.Size = new Size(229, 74);
+            button3.Size = new Size(198, 74);
             button3.TabIndex = 18;
             button3.Text = "$5000";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -136,12 +140,13 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft JhengHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(547, 153);
+            button4.Location = new Point(580, 183);
             button4.Name = "button4";
-            button4.Size = new Size(229, 74);
+            button4.Size = new Size(196, 77);
             button4.TabIndex = 19;
             button4.Text = "$500";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -150,12 +155,13 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Microsoft JhengHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(547, 266);
+            button5.Location = new Point(580, 266);
             button5.Name = "button5";
-            button5.Size = new Size(229, 74);
+            button5.Size = new Size(196, 74);
             button5.TabIndex = 20;
             button5.Text = "$2000";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button7
             // 
@@ -164,22 +170,24 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Microsoft JhengHei UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(547, 370);
+            button7.Location = new Point(580, 346);
             button7.Name = "button7";
-            button7.Size = new Size(229, 74);
+            button7.Size = new Size(196, 74);
             button7.TabIndex = 21;
             button7.Text = "$10000";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
-            // label2
+            // balancelbl
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(21, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(246, 38);
-            label2.TabIndex = 22;
-            label2.Text = "AVAILABLE BAL";
+            balancelbl.AutoSize = true;
+            balancelbl.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            balancelbl.Location = new Point(21, 100);
+            balancelbl.Name = "balancelbl";
+            balancelbl.Size = new Size(246, 38);
+            balancelbl.TabIndex = 22;
+            balancelbl.Text = "AVAILABLE BAL";
+            balancelbl.Click += label2_Click;
             // 
             // pictureBox1
             // 
@@ -198,12 +206,13 @@
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = Color.White;
-            button8.Location = new Point(21, 434);
+            button8.Location = new Point(12, 472);
             button8.Name = "button8";
-            button8.Size = new Size(211, 73);
+            button8.Size = new Size(159, 35);
             button8.TabIndex = 24;
             button8.Text = "BACK";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // timer1
             // 
@@ -218,7 +227,7 @@
             ClientSize = new Size(811, 519);
             Controls.Add(button8);
             Controls.Add(pictureBox1);
-            Controls.Add(label2);
+            Controls.Add(balancelbl);
             Controls.Add(button7);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -247,8 +256,9 @@
         private Button button3;
         private Button button4;
         private Button button5;
+        //private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Button button7;
-        private Label label2;
+        private Label balancelbl;
         private PictureBox pictureBox1;
         private Button button8;
         private System.Windows.Forms.Timer timer1;

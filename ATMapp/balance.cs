@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ATMapp
 {
@@ -20,12 +21,23 @@ namespace ATMapp
         {
             InitializeComponent();
         }
-
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ATMapp\ATMapp\DATABASEatm\ATMDb.mdf;Integrated Security=True;Connect Timeout=30;");
+        private void getbalance()
+        {
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select Balance from AccountTbl where AccNum = '"+AccNumberlbl.Text+"' ", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            Balancelbl.Text = dt.Rows[0][0].ToString() + " $";
+            Con.Close();
+        }
         private void balance_Load(object sender, EventArgs e)
         {
             text = lbltext.Text;
             lbltext.Text = "";
             timer1.Start();
+            AccNumberlbl.Text = HOME.AccNumber;
+            getbalance();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -37,6 +49,29 @@ namespace ATMapp
             }
             else
                 timer1.Stop();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HOME home = new HOME();
+            this.Hide();
+            home.Show();
         }
     }
 }

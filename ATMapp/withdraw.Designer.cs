@@ -34,9 +34,9 @@
             button6 = new Button();
             lbltext = new Label();
             pictureBox1 = new PictureBox();
-            textBox2 = new TextBox();
+            wdamtTb = new TextBox();
             label2 = new Label();
-            label1 = new Label();
+            balancelbl = new Label();
             button1 = new Button();
             button2 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -70,6 +70,7 @@
             button6.Size = new Size(30, 29);
             button6.TabIndex = 16;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbltext
             // 
@@ -94,12 +95,12 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // wdamtTb
             // 
-            textBox2.Location = new Point(352, 171);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 27);
-            textBox2.TabIndex = 9;
+            wdamtTb.Location = new Point(330, 182);
+            wdamtTb.Name = "wdamtTb";
+            wdamtTb.Size = new Size(178, 27);
+            wdamtTb.TabIndex = 9;
             // 
             // label2
             // 
@@ -107,20 +108,20 @@
             label2.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(179, 171);
             label2.Name = "label2";
-            label2.Size = new Size(167, 38);
+            label2.Size = new Size(145, 38);
             label2.TabIndex = 8;
-            label2.Text = "AMOUNT:";
+            label2.Text = "Amount:";
             // 
-            // label1
+            // balancelbl
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(237, 109);
-            label1.Name = "label1";
-            label1.Size = new Size(253, 29);
-            label1.TabIndex = 10;
-            label1.Text = "AVAILABLE BALANCE";
+            balancelbl.AutoSize = true;
+            balancelbl.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            balancelbl.ForeColor = Color.Black;
+            balancelbl.Location = new Point(237, 109);
+            balancelbl.Name = "balancelbl";
+            balancelbl.Size = new Size(253, 29);
+            balancelbl.TabIndex = 10;
+            balancelbl.Text = "AVAILABLE BALANCE";
             // 
             // button1
             // 
@@ -129,12 +130,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Indigo;
-            button1.Location = new Point(12, 267);
+            button1.Location = new Point(12, 290);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(96, 34);
             button1.TabIndex = 14;
             button1.Text = "BACK";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -143,12 +145,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(274, 267);
+            button2.Location = new Point(359, 235);
             button2.Name = "button2";
-            button2.Size = new Size(182, 57);
+            button2.Size = new Size(149, 30);
             button2.TabIndex = 15;
             button2.Text = "WITHDRAW";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // timer1
             // 
@@ -163,8 +166,8 @@
             ClientSize = new Size(682, 336);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
+            Controls.Add(balancelbl);
+            Controls.Add(wdamtTb);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -185,9 +188,9 @@
         private Button button6;
         private Label lbltext;
         private PictureBox pictureBox1;
-        private TextBox textBox2;
+        private TextBox wdamtTb;
         private Label label2;
-        private Label label1;
+        private Label balancelbl;
         private Button button1;
         private Button button2;
         private System.Windows.Forms.Timer timer1;
