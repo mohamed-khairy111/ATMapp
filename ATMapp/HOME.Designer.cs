@@ -57,6 +57,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // lblText
             // 
@@ -102,6 +103,7 @@
             button1.TabIndex = 4;
             button1.Text = "DEPOSIT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -116,6 +118,7 @@
             button7.TabIndex = 10;
             button7.Text = "WITHDRAW";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button2
             // 
@@ -130,6 +133,7 @@
             button2.TabIndex = 11;
             button2.Text = "FAST CASH";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -144,6 +148,7 @@
             button3.TabIndex = 12;
             button3.Text = "MINI STATEMENT";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -158,6 +163,7 @@
             button4.TabIndex = 13;
             button4.Text = "CHANGE PIN";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -172,6 +178,7 @@
             button5.TabIndex = 14;
             button5.Text = "BALANCE";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -181,11 +188,12 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.White;
-            button6.Location = new Point(856, 12);
+            button6.Location = new Point(869, -2);
             button6.Name = "button6";
             button6.Size = new Size(30, 29);
             button6.TabIndex = 15;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button8
             // 
@@ -200,6 +208,7 @@
             button8.TabIndex = 16;
             button8.Text = "LOG OUT";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // timer1
             // 

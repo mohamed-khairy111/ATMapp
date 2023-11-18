@@ -12,10 +12,11 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\moham\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\moham\\.nuget\\packages"
+      "C:\\Users\\m8325\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\m8325\\.nuget\\packages"
     ],
     "configProperties": {
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }

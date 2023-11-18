@@ -1,4 +1,5 @@
-﻿namespace ATMapp
+﻿
+namespace ATMapp
 {
     partial class login
     {
@@ -32,8 +33,8 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            AccNumTb = new TextBox();
+            PinTb = new TextBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             label3 = new Label();
@@ -77,19 +78,20 @@
             label2.TabIndex = 2;
             label2.Text = "SYSTEM";
             // 
-            // textBox1
+            // AccNumTb
             // 
-            textBox1.Location = new Point(941, 296);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 27);
-            textBox1.TabIndex = 4;
+            AccNumTb.Location = new Point(941, 296);
+            AccNumTb.Name = "AccNumTb";
+            AccNumTb.Size = new Size(182, 27);
+            AccNumTb.TabIndex = 4;
             // 
-            // textBox2
+            // PinTb
             // 
-            textBox2.Location = new Point(941, 376);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 27);
-            textBox2.TabIndex = 5;
+            PinTb.Location = new Point(941, 376);
+            PinTb.Name = "PinTb";
+            PinTb.PasswordChar = '*';
+            PinTb.Size = new Size(182, 27);
+            PinTb.TabIndex = 5;
             // 
             // pictureBox3
             // 
@@ -136,12 +138,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(941, 421);
+            button1.Location = new Point(993, 430);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(130, 32);
             button1.TabIndex = 10;
             button1.Text = "LOG IN";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label5
             // 
@@ -163,6 +166,7 @@
             button2.TabIndex = 12;
             button2.Text = "SIGN UP";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -176,6 +180,7 @@
             button3.Size = new Size(31, 30);
             button3.TabIndex = 13;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // login
             // 
@@ -190,8 +195,8 @@
             Controls.Add(label3);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(PinTb);
+            Controls.Add(AccNumTb);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -205,13 +210,14 @@
             PerformLayout();
         }
 
+
         #endregion
 
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox AccNumTb;
+        private TextBox PinTb;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private Label label3;
