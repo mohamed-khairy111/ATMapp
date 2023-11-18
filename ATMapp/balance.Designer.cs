@@ -35,9 +35,9 @@
             lbltext = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            label3 = new Label();
+            AccNumberlbl = new Label();
             label4 = new Label();
-            label5 = new Label();
+            Balancelbl = new Label();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
@@ -65,11 +65,12 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.White;
-            button6.Location = new Point(648, 3);
+            button6.Location = new Point(657, 3);
             button6.Name = "button6";
             button6.Size = new Size(30, 29);
             button6.TabIndex = 16;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbltext
             // 
@@ -100,20 +101,22 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(206, 95);
             label2.Name = "label2";
-            label2.Size = new Size(200, 29);
+            label2.Size = new Size(173, 29);
             label2.TabIndex = 2;
-            label2.Text = "ACCOUNT NUM:";
+            label2.Text = "Account Num:";
+            label2.Click += label2_Click;
             // 
-            // label3
+            // AccNumberlbl
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(412, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(109, 29);
-            label3.TabIndex = 3;
-            label3.Text = "AccNum";
+            AccNumberlbl.AutoSize = true;
+            AccNumberlbl.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            AccNumberlbl.ForeColor = Color.Black;
+            AccNumberlbl.Location = new Point(412, 95);
+            AccNumberlbl.Name = "AccNumberlbl";
+            AccNumberlbl.Size = new Size(109, 29);
+            AccNumberlbl.TabIndex = 3;
+            AccNumberlbl.Text = "AccNum";
+            AccNumberlbl.Click += label3_Click;
             // 
             // label4
             // 
@@ -122,20 +125,20 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(206, 167);
             label4.Name = "label4";
-            label4.Size = new Size(198, 29);
+            label4.Size = new Size(163, 29);
             label4.TabIndex = 4;
-            label4.Text = "YOUR BALANCE:";
+            label4.Text = "Your Balance:";
             // 
-            // label5
+            // Balancelbl
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(404, 167);
-            label5.Name = "label5";
-            label5.Size = new Size(139, 29);
-            label5.TabIndex = 5;
-            label5.Text = "Balance in$";
+            Balancelbl.AutoSize = true;
+            Balancelbl.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            Balancelbl.ForeColor = Color.Black;
+            Balancelbl.Location = new Point(404, 167);
+            Balancelbl.Name = "Balancelbl";
+            Balancelbl.Size = new Size(139, 29);
+            Balancelbl.TabIndex = 5;
+            Balancelbl.Text = "Balance in$";
             // 
             // button1
             // 
@@ -144,12 +147,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(258, 273);
+            button1.Location = new Point(258, 298);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(182, 32);
             button1.TabIndex = 11;
             button1.Text = "BACK";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // timer1
             // 
@@ -163,9 +167,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(690, 342);
             Controls.Add(button1);
-            Controls.Add(label5);
+            Controls.Add(Balancelbl);
             Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(AccNumberlbl);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -188,9 +192,9 @@
         private Button button6;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label3;
+        private Label AccNumberlbl;
         private Label label4;
-        private Label label5;
+        private Label Balancelbl;
         private Button button1;
         private System.Windows.Forms.Timer timer1;
     }

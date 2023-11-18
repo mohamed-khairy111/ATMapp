@@ -31,19 +31,19 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(account));
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox8 = new TextBox();
+            AccNumTb = new TextBox();
+            AccNametb = new TextBox();
+            FanameTb = new TextBox();
+            Addresstb = new TextBox();
+            pintb = new TextBox();
+            PhoneTb = new TextBox();
             label4 = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
             label6 = new Label();
-            comboBox1 = new ComboBox();
+            educationcb = new ComboBox();
             label7 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -63,48 +63,50 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // AccNumTb
             // 
-            textBox1.Location = new Point(852, 162);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 27);
-            textBox1.TabIndex = 5;
+            AccNumTb.Location = new Point(852, 162);
+            AccNumTb.Name = "AccNumTb";
+            AccNumTb.Size = new Size(182, 27);
+            AccNumTb.TabIndex = 5;
             // 
-            // textBox2
+            // AccNametb
             // 
-            textBox2.Location = new Point(852, 242);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 27);
-            textBox2.TabIndex = 6;
+            AccNametb.Location = new Point(852, 242);
+            AccNametb.Name = "AccNametb";
+            AccNametb.Size = new Size(182, 27);
+            AccNametb.TabIndex = 6;
             // 
-            // textBox3
+            // FanameTb
             // 
-            textBox3.Location = new Point(852, 332);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(182, 27);
-            textBox3.TabIndex = 7;
+            FanameTb.Location = new Point(852, 332);
+            FanameTb.Name = "FanameTb";
+            FanameTb.Size = new Size(182, 27);
+            FanameTb.TabIndex = 7;
+            FanameTb.TextChanged += FanameTb_TextChanged;
             // 
-            // textBox4
+            // Addresstb
             // 
-            textBox4.Location = new Point(852, 388);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 115);
-            textBox4.TabIndex = 8;
+            Addresstb.Location = new Point(852, 388);
+            Addresstb.Multiline = true;
+            Addresstb.Name = "Addresstb";
+            Addresstb.Size = new Size(182, 115);
+            Addresstb.TabIndex = 8;
             // 
-            // textBox5
+            // pintb
             // 
-            textBox5.Location = new Point(1130, 162);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(182, 27);
-            textBox5.TabIndex = 9;
+            pintb.Location = new Point(1130, 162);
+            pintb.Name = "pintb";
+            pintb.PasswordChar = '*';
+            pintb.Size = new Size(182, 27);
+            pintb.TabIndex = 9;
             // 
-            // textBox8
+            // PhoneTb
             // 
-            textBox8.Location = new Point(1130, 332);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(182, 27);
-            textBox8.TabIndex = 12;
+            PhoneTb.Location = new Point(1130, 332);
+            PhoneTb.Name = "PhoneTb";
+            PhoneTb.Size = new Size(182, 27);
+            PhoneTb.TabIndex = 12;
             // 
             // label4
             // 
@@ -160,14 +162,14 @@
             label6.TabIndex = 18;
             label6.Text = "ADDRESS:";
             // 
-            // comboBox1
+            // educationcb
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Non Graduate", "Under Graduate", "Post Graduate" });
-            comboBox1.Location = new Point(1130, 242);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 28);
-            comboBox1.TabIndex = 19;
+            educationcb.FormattingEnabled = true;
+            educationcb.Items.AddRange(new object[] { "Non Graduate", "Under Graduate", "Post Graduate" });
+            educationcb.Location = new Point(1130, 242);
+            educationcb.Name = "educationcb";
+            educationcb.Size = new Size(182, 28);
+            educationcb.TabIndex = 19;
             // 
             // label7
             // 
@@ -185,12 +187,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(1130, 388);
+            button1.Location = new Point(1157, 398);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(131, 31);
             button1.TabIndex = 21;
-            button1.Text = "SUBMIT";
+            button1.Text = "SIGN UP";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -198,12 +201,13 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.Purple;
-            button2.Location = new Point(1130, 451);
+            button2.Location = new Point(1200, 451);
             button2.Name = "button2";
-            button2.Size = new Size(182, 52);
+            button2.Size = new Size(112, 29);
             button2.TabIndex = 22;
             button2.Text = "LOG OUT";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // lbltext
             // 
@@ -228,11 +232,12 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.Purple;
-            button3.Location = new Point(1292, 12);
+            button3.Location = new Point(1298, 12);
             button3.Name = "button3";
-            button3.Size = new Size(31, 30);
+            button3.Size = new Size(25, 30);
             button3.TabIndex = 24;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // account
             // 
@@ -244,19 +249,19 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label7);
-            Controls.Add(comboBox1);
+            Controls.Add(educationcb);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label4);
-            Controls.Add(textBox8);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(PhoneTb);
+            Controls.Add(pintb);
+            Controls.Add(Addresstb);
+            Controls.Add(FanameTb);
+            Controls.Add(AccNametb);
+            Controls.Add(AccNumTb);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "account";
@@ -270,19 +275,19 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox8;
+        private TextBox AccNumTb;
+        private TextBox AccNametb;
+        private TextBox FanameTb;
+        private TextBox Addresstb;
+        private TextBox pintb;
+        private TextBox PhoneTb;
         private Label label4;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox educationcb;
         private Label label7;
         private Button button1;
         private Button button2;

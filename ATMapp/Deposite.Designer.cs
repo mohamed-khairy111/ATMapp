@@ -35,7 +35,7 @@
             lbltext = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            DepoAmtTb = new TextBox();
             button1 = new Button();
             button2 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -69,6 +69,7 @@
             button6.Size = new Size(30, 29);
             button6.TabIndex = 16;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbltext
             // 
@@ -103,12 +104,12 @@
             label2.TabIndex = 6;
             label2.Text = "AMOUNT:";
             // 
-            // textBox2
+            // DepoAmtTb
             // 
-            textBox2.Location = new Point(347, 140);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 27);
-            textBox2.TabIndex = 7;
+            DepoAmtTb.Location = new Point(347, 140);
+            DepoAmtTb.Name = "DepoAmtTb";
+            DepoAmtTb.Size = new Size(178, 27);
+            DepoAmtTb.TabIndex = 7;
             // 
             // button1
             // 
@@ -117,12 +118,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Indigo;
-            button1.Location = new Point(12, 269);
+            button1.Location = new Point(12, 295);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(117, 31);
             button1.TabIndex = 13;
             button1.Text = "BACK";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -131,12 +133,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(256, 269);
+            button2.Location = new Point(347, 235);
             button2.Name = "button2";
-            button2.Size = new Size(182, 57);
+            button2.Size = new Size(182, 37);
             button2.TabIndex = 14;
             button2.Text = "DEPOSITE";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // timer1
             // 
@@ -151,7 +154,7 @@
             ClientSize = new Size(689, 338);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(DepoAmtTb);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -173,7 +176,7 @@
         private Label lbltext;
         private PictureBox pictureBox1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox DepoAmtTb;
         private Button button1;
         private Button button2;
         private System.Windows.Forms.Timer timer1;

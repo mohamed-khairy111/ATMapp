@@ -35,9 +35,9 @@
             lbltext = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            Pin1Tb = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            Pin2Tb = new TextBox();
             button1 = new Button();
             button2 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -71,6 +71,7 @@
             button6.Size = new Size(30, 29);
             button6.TabIndex = 16;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbltext
             // 
@@ -101,16 +102,17 @@
             label1.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(180, 103);
             label1.Name = "label1";
-            label1.Size = new Size(159, 38);
+            label1.Size = new Size(145, 38);
             label1.TabIndex = 3;
-            label1.Text = "NEW PIN:";
+            label1.Text = "New Pin:";
             // 
-            // textBox1
+            // Pin1Tb
             // 
-            textBox1.Location = new Point(334, 114);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(178, 27);
-            textBox1.TabIndex = 4;
+            Pin1Tb.Location = new Point(334, 114);
+            Pin1Tb.Name = "Pin1Tb";
+            Pin1Tb.PasswordChar = '*';
+            Pin1Tb.Size = new Size(178, 27);
+            Pin1Tb.TabIndex = 4;
             // 
             // label2
             // 
@@ -118,16 +120,18 @@
             label2.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(180, 181);
             label2.Name = "label2";
-            label2.Size = new Size(230, 38);
+            label2.Size = new Size(197, 38);
             label2.TabIndex = 5;
-            label2.Text = "CONFIRM PIN:";
+            label2.Text = "Confirm Pin:";
             // 
-            // textBox2
+            // Pin2Tb
             // 
-            textBox2.Location = new Point(416, 181);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 27);
-            textBox2.TabIndex = 6;
+            Pin2Tb.Location = new Point(394, 192);
+            Pin2Tb.Name = "Pin2Tb";
+            Pin2Tb.PasswordChar = '*';
+            Pin2Tb.Size = new Size(178, 27);
+            Pin2Tb.TabIndex = 6;
+            Pin2Tb.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -136,12 +140,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Indigo;
-            button1.Location = new Point(12, 285);
+            button1.Location = new Point(12, 309);
             button1.Name = "button1";
-            button1.Size = new Size(182, 57);
+            button1.Size = new Size(124, 33);
             button1.TabIndex = 12;
             button1.Text = "BACK";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -150,12 +155,13 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(295, 285);
+            button2.Location = new Point(394, 285);
             button2.Name = "button2";
-            button2.Size = new Size(182, 57);
+            button2.Size = new Size(153, 39);
             button2.TabIndex = 13;
             button2.Text = "CHANGE";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // timer1
             // 
@@ -170,9 +176,9 @@
             ClientSize = new Size(684, 354);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(Pin2Tb);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(Pin1Tb);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -194,9 +200,9 @@
         private Label lbltext;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox Pin1Tb;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox Pin2Tb;
         private Button button1;
         private Button button2;
         private System.Windows.Forms.Timer timer1;
